@@ -16,11 +16,13 @@ This repo is the public issue tracker for Tabtwinsy. [Open an issue](../../issue
 
 ## Changelog
 
-### 1.0.15 (in review)
-- Closing a tab in one window now closes it in the other windows too (previously the mirror over-protected each window's active tab, so a cross-window close never propagated)
-- Fixed tabs sometimes rearranging when closing a tab (same-site tabs, e.g. two YouTube videos, could be mistaken for each other by the matcher)
-- Fixed tab groups created while the extension was paused being deleted when toggling it back on
-- Known issue, still open: opening a favorite (Dia top-left) can still create a duplicate regular tab in other windows
+### 1.0.23
+- Fixed tab groups failing to migrate to new windows, and scrambled tab order (redirected and same-site tabs are now matched correctly)
+- Closing a tab in one window now closes it in the other windows too
+- Fixed tab groups being deleted when toggling the extension back on
+- Browser favorites (e.g. Dia's top-left favorites) no longer duplicate as regular tabs in other windows — favorites are now kept window-local automatically
+- Fixed the Google Meet tab force-switching back during calls
+- New in Options: a "Sites kept window-local" list you can review and edit
 
 ### 1.0.14
 - Fixed tab groups failing to migrate to new windows (redirected URLs missed their group slot)

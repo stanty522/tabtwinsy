@@ -16,6 +16,13 @@ This repo is the public issue tracker for Tabtwinsy. [Open an issue](../../issue
 
 ## Changelog
 
+### 1.0.25
+- Fixed recently-closed tabs "resurrecting" into new windows (the browser keeps invisible windows holding old tabs; they are no longer treated as sync sources)
+- Mass tab removal safety guard: no sync pass can delete a large fraction of a window's tabs unless you actually closed them yourself
+- Renaming a tab group now propagates to other windows on Dia (groups are renamed in place)
+- Group collapse/expand and renames propagate within ~1 minute even when the browser sends no events (faster heartbeat)
+- New-window population now retries if interrupted, and no longer trips the safety limiter on large windows
+
 ### 1.0.23
 - Fixed tab groups failing to migrate to new windows, and scrambled tab order (redirected and same-site tabs are now matched correctly)
 - Closing a tab in one window now closes it in the other windows too

@@ -16,6 +16,9 @@ This repo is the public issue tracker for Tabtwinsy. [Open an issue](../../issue
 
 ## Changelog
 
+### 1.0.28
+- Fixed new windows arriving incomplete when the window you copied from has a lot of tabs: tab groups could go missing entirely, or arrive holding a single tab. An internal safety limiter (there to stop runaway tab activity) was cutting short the one-time filling of a brand new window, and did not account for how many windows you keep in sync.
+
 ### 1.0.27
 - Fixed windows that open blank never receiving your tabs. In Dia this showed up when moving a window between spaces: the window was mistaken for a picture-in-picture surface, skipped, and then stayed empty. Any window that ends up empty is now filled automatically.
 
